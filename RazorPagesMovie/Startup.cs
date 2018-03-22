@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RazorPagesMovie.Models;
 using Microsoft.EntityFrameworkCore;
+using DevExpress.AspNetCore;
 
 namespace RazorPagesMovie
 {
@@ -26,9 +27,12 @@ namespace RazorPagesMovie
             // requires 
             // using RazorPagesMovie.Models;
             // using Microsoft.EntityFrameworkCore;
+            // using DevExpress.AspNetCore;
 
             services.AddDbContext<MovieContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
+            // set up the services utilized by DevExpress controls
+            services.AddDevExpressControls();
             services.AddMvc();
         }
 
@@ -44,7 +48,8 @@ namespace RazorPagesMovie
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            // register DevExpress middleware components before calling UseMvc()
+            app.UseDevExpressControls();
             app.UseStaticFiles();
 
             app.UseMvc();
