@@ -1,0 +1,31 @@
+﻿@page
+@model RenderDevExpressControlsExampleModel
+@{
+    ViewData["Title"] = "Render Dev Express Controls Example";
+}
+@(Html.DevExpress()
+                    .BootstrapAccordion("myAccordion")
+                    .Groups(groups =>
+                    {
+                        groups.Add().Text("Tables")
+                            .Items(items =>
+                            {
+                                items.Add()
+                                    .Text("Users")
+                                    .IconCssClass("fa fa-user");
+                                items.Add()
+                                    .Text("Tasks")
+                                    .IconCssClass("fa fa-tasks");
+                            });
+                        groups.Add().Text("Analysis")
+                         .Items(items =>
+                         {
+                             items.Add()
+                                 .Text("Dashboard")
+                                 .IconCssClass("fa fa-dashboard");
+                             items.Add()
+                                 .Text("KPI")
+                                 .IconCssClass("fa fa-percent");
+                         });
+                    })
+)
