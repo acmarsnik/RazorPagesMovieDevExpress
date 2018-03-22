@@ -4,83 +4,71 @@
     ViewData["Title"] = "Render Dev Express Controls Example";
 }
 
-<div>
-    @(Html.DevExpress()
-                                    .BootstrapAccordion("myAccordion")
-                                    .CssClasses(css => css.Control("my-accordion"))
-                                    .Groups(groups =>
-                                    {
-                                        groups.Add().Text("Tables")
-                                            .Items(items =>
-                                            {
-                                                items.Add()
-                                                    .Text("Users")
-                                                    .IconCssClass("fa fa-user");
-                                                items.Add()
-                                                    .Text("Tasks")
-                                                    .IconCssClass("fa fa-tasks");
-                                            });
-                                        groups.Add().Text("Analysis")
-                                         .Items(items =>
-                                         {
-                                             items.Add()
-                                                 .Text("Dashboard")
-                                                 .IconCssClass("fa fa-dashboard");
-                                             items.Add()
-                                                 .Text("KPI")
-                                                 .IconCssClass("fa fa-percent");
-                                         });
-                                    })
-    )
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            @(Html.DevExpress()
+                                                            .BootstrapAccordion("myAccordion")
+                                                            .CssClasses(css => css.Control("my-accordion"))
+                                                            .Groups(groups =>
+                                                            {
+                                                                groups.Add().Text("Tables")
+                                                                    .Items(items =>
+                                                                    {
+                                                                        items.Add()
+                                                                            .Text("Users")
+                                                                            .IconCssClass("fa fa-user");
+                                                                        items.Add()
+                                                                            .Text("Tasks")
+                                                                            .IconCssClass("fa fa-tasks");
+                                                                    });
+                                                                groups.Add().Text("Analysis")
+                                                                 .Items(items =>
+                                                                 {
+                                                                     items.Add()
+                                                                         .Text("Dashboard")
+                                                                         .IconCssClass("fa fa-dashboard");
+                                                                     items.Add()
+                                                                         .Text("KPI")
+                                                                         .IconCssClass("fa fa-percent");
+                                                                 });
+                                                            })
+            )
+        </div>
+    </div>
 </div>
 
-<div class="flo nothing">
-<p>
-    Nothing
-</p>
+<div class="container">
+    <div class="row marg-top">
+        <div class="row">
+            <div class="col-sm">
+                @(Html.DevExpress()
+                                                    .BootstrapButton("squareButton")
+                                                    .CssClasses(css => css.Control("square-button"))
+                                                    .Text("Square Button")
 
+                )
+            </div>
+        </div>
+        <div class="row marg-top">
+            <div class="col-sm">
+                @(Html.DevExpress()
+                                                        .BootstrapButton("roundedButton")
+                                                        .CssClasses(css => css.Control("rounded-button"))
+                                                        .Text("Rounded Button")
+
+                )
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="flo nothing">
-    <p>
-        Nothing
-    </p>
+    <style>
+        .square-button {
+            border-radius: 0;
+        }
+        .marg-top {
+            margin-top: 10px;
+        }
 
-</div>
-
-
-<div class="marg flo">
-    @(Html.DevExpress()
-                    .BootstrapButton("squareButton")
-                    .CssClasses(css => css.Control("square-button"))
-                    .Text("Square Button")
-
-    )
-    
-</div>
-
-<div class="marg flo">
-    @(Html.DevExpress()
-                            .BootstrapButton("roundedButton")
-                            .CssClasses(css => css.Control("rounded-button"))
-                            .Text("Rounded Button")
-
-    )
-
-</div>
-
-<style>
-    .square-button {
-        border-radius: 0;
-    }
-    .marg{
-        margin: 10px 10px 10px 10px;
-        
-    }
-    .flo {
-        float: clear
-    }
-    .nothing {
-        color: white;
-    }
-</style>
+    </style>
