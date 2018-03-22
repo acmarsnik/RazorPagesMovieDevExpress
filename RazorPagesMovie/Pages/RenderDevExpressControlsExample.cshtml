@@ -3,29 +3,84 @@
 @{
     ViewData["Title"] = "Render Dev Express Controls Example";
 }
-@(Html.DevExpress()
-                    .BootstrapAccordion("myAccordion")
-                    .Groups(groups =>
-                    {
-                        groups.Add().Text("Tables")
-                            .Items(items =>
-                            {
-                                items.Add()
-                                    .Text("Users")
-                                    .IconCssClass("fa fa-user");
-                                items.Add()
-                                    .Text("Tasks")
-                                    .IconCssClass("fa fa-tasks");
-                            });
-                        groups.Add().Text("Analysis")
-                         .Items(items =>
-                         {
-                             items.Add()
-                                 .Text("Dashboard")
-                                 .IconCssClass("fa fa-dashboard");
-                             items.Add()
-                                 .Text("KPI")
-                                 .IconCssClass("fa fa-percent");
-                         });
-                    })
-)
+
+<div>
+    @(Html.DevExpress()
+                                    .BootstrapAccordion("myAccordion")
+                                    .CssClasses(css => css.Control("my-accordion"))
+                                    .Groups(groups =>
+                                    {
+                                        groups.Add().Text("Tables")
+                                            .Items(items =>
+                                            {
+                                                items.Add()
+                                                    .Text("Users")
+                                                    .IconCssClass("fa fa-user");
+                                                items.Add()
+                                                    .Text("Tasks")
+                                                    .IconCssClass("fa fa-tasks");
+                                            });
+                                        groups.Add().Text("Analysis")
+                                         .Items(items =>
+                                         {
+                                             items.Add()
+                                                 .Text("Dashboard")
+                                                 .IconCssClass("fa fa-dashboard");
+                                             items.Add()
+                                                 .Text("KPI")
+                                                 .IconCssClass("fa fa-percent");
+                                         });
+                                    })
+    )
+</div>
+
+<div class="flo nothing">
+<p>
+    Nothing
+</p>
+
+</div>
+
+<div class="flo nothing">
+    <p>
+        Nothing
+    </p>
+
+</div>
+
+
+<div class="marg flo">
+    @(Html.DevExpress()
+                    .BootstrapButton("squareButton")
+                    .CssClasses(css => css.Control("square-button"))
+                    .Text("Square Button")
+
+    )
+    
+</div>
+
+<div class="marg flo">
+    @(Html.DevExpress()
+                            .BootstrapButton("roundedButton")
+                            .CssClasses(css => css.Control("rounded-button"))
+                            .Text("Rounded Button")
+
+    )
+
+</div>
+
+<style>
+    .square-button {
+        border-radius: 0;
+    }
+    .marg{
+        margin: 10px 10px 10px 10px;
+        
+    }
+    .flo {
+        float: clear
+    }
+    .nothing {
+        color: white;
+    }
+</style>
