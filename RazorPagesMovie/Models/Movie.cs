@@ -8,6 +8,7 @@ namespace RazorPagesMovie.Models
 {
     public class Movie
     {
+        [Key]
         public int ID { get; set; }
 
         [StringLength(60, MinimumLength = 3)]

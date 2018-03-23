@@ -1,0 +1,18 @@
+﻿@page
+@model RazorPagesMovie.Pages.Movies.DevExpMovGridController
+@(Html.DevExpress()
+        .BootstrapGridView<RazorPagesMovie.Models.Movie>("bindingGrid")
+        .KeyFieldName(m => m.ID)
+        .Columns(columns =>
+        {
+            columns.Add(m => m.Title);
+            columns.Add(m => m.ReleaseDate);
+            columns.Add(m => m.Price);
+            columns.Add(m => m.Genre);
+            columns.Add(m => m.Rating);
+        })
+        .Routes(routes => routes
+            .MapRoute(r => r
+                .Action("Binding")
+                .Controller("DevExpMovGrid")))
+        .Bind(Model))
