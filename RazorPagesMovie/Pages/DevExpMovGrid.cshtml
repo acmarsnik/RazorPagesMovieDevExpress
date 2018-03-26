@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 
-@model IEnumerable
+@model IEnumerable<RazorPagesMovie.Models.Movie>
 @(Html.DevExpress()
         .BootstrapGridView<RazorPagesMovie.Models.Movie>("bindingGrid")
         .KeyFieldName(m => m.ID)
