@@ -27,4 +27,19 @@ namespace RazorPagesMovie.Models
         [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$"), StringLength(5)]
         public string Rating { get; set; }
     }
+    // Dev Express Example Code Below
+    // using System.ComponentModel.DataAnnotations;
+    // namespace DevExpress.AspNetCore.DemoModels
+    //    {
+    //        public class SalesProduct
+    //        {
+    //            [Key]
+    //            public int ProductID { get; set; }
+    //            public string ProductName { get; set; }
+    //            public short? UnitsOnOrder { get; set; }
+    //            public short? UnitsInStock { get; set; }
+    //            public decimal? UnitPrice { get; set; }
+    //            public string QuantityPerUnit { get; set; }
+    //        }
+    //    }
 }

@@ -8,7 +8,6 @@ namespace RazorPagesMovie.Models
                 : base(options)
         {
         }
-
         public DbSet<Movie> Movie { get; set; }
         public DbSet<Schedule> Schedule { get; set; }
     }

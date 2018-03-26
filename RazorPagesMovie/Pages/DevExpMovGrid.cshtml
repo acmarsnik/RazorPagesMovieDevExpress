@@ -1,0 +1,45 @@
+﻿using System.Collections;
+
+@model IEnumerable
+@(Html.DevExpress()
+        .BootstrapGridView<RazorPagesMovie.Models.Movie>("bindingGrid")
+        .KeyFieldName(m => m.ID)
+        .Columns(columns =>
+        {
+            columns.Add(m => m.Title);
+            columns.Add(m => m.ReleaseDate);
+            columns.Add(m => m.Price);
+            columns.Add(m => m.Genre);
+            columns.Add(m => m.Rating);
+        })
+        .Routes(routes => routes
+            .MapRoute(r => r
+                .Action("Binding")
+                .Controller("DevExpMovGrid")))
+        .Bind(Model))
+
+@*Dev Express Example Code:
+    
+@model IEnumerable
+    @(Html.DevExpress()
+        .BootstrapGridView<DevExpress.AspNetCore.DemoModels.SalesProduct>("bindingGrid")
+        .KeyFieldName(m => m.ProductID)
+        .Columns(columns => {
+            columns.Add(m => m.ProductName);
+            columns.Add(m => m.QuantityPerUnit);
+            columns.Add()
+                .FieldName("UnitPrice");
+            columns.Add()
+                .FieldName("UnitsOnOrder");
+            columns.AddTextColumn()
+                .FieldName("Total")
+                .UnboundType(UnboundColumnType.Decimal)
+                .UnboundExpression("UnitsOnOrder * UnitPrice")
+                .PropertiesTextEdit(properties => properties
+                    .DisplayFormatString("c"));
+        })
+        .Routes(routes => routes
+            .MapRoute(r => r
+                .Action("Binding")
+                .Controller("GridView")))
+        .Bind(Model))*@
